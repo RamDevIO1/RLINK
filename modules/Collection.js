@@ -1,7 +1,7 @@
 class Collection extends Map {
   constructor(...args) {
     super(...args);
-    this.methods = Object.getOwnPropertyNames(Collections.prototype);
+    this.methods = Object.getOwnPropertyNames(Collection.prototype);
   }
   find(fn = (value, key, collection) => {}, thisArg) {
     if (typeof thisArg !== "undefined") fn = fn.bind(thisArg);

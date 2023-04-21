@@ -10,7 +10,7 @@
 / –––––––––––––––––––––––––––––––––––––––––––– */
 
 require('./index');
-require('./config');
+require('./config.js');
 
 const { Collection, Function, color } = require("./modules");
 const { isUrl } = Function;

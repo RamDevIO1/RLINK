@@ -10,7 +10,6 @@ const fs                = require('fs')
 const moment            = require('moment-timezone')
 const util              = require('util')
 const axios             = require("axios")
-const util              = require("util")
 const { resolve }       = require("path")
 const { sizeFormatter } = require('human-readable')
 
