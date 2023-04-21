@@ -3,7 +3,7 @@ module.exports = {
   alias: ["hello", "alive"],
   desc: "Say hello to bot.",
   category: "general",
-  async exec(RLink, m, { args, pushName, prefix }) {
+  async exec(RLink, m, { args, pushName, prefix, name }) {
     const pad = (s) => (s < 10 ? "0" : "") + s;
     const formatTime = (seconds) => {
       const hours = Math.floor(seconds / (60 * 60));
@@ -12,7 +12,7 @@ module.exports = {
       return time = `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
     };
     const uptime = () => formatTime(process.uptime());
-    await RLink.sendMessage(m.from, { caption: `\nHello *${pushName}*, I am *${botName}* bot. type *${prefix}help* to get my full command list.\n\n_🧩 Server Uptime:_ *${uptime()}*\n_🎀 Status:_ *Development*\n` }, { quoted: m })
+    await RLink.sendMessage(m.from, { caption: `\nHello *${pushName}*, I am *${name}* bot. type *${prefix}help* to get my full command list.\n\n_🧩 Server Uptime:_ *${uptime()}*\n_🎀 Status:_ *Development*\n` }, { quoted: m })
   }
 }
 
