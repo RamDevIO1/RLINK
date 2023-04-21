@@ -54,7 +54,7 @@ const store = makeInMemoryStore({
   })
 });
 
-const PORT = $.port;
+const PORT = global.port;
 const app = express();
 let QR_GENERATE = "invalid";
 
@@ -62,9 +62,9 @@ let status;
 
 // %%%%%%%%%%% - [ INIT ] - %%%%%%%%%%% //
 const RLINK = async () => {
-  database.connect($.monggodb);
+  database.connect(global.monggodb);
   
-  const { getAuthFromDatabase } = new Auth($.sessionId)
+  const { getAuthFromDatabase } = new Auth(global.sessionId)
   const { saveState, state, clearState } = await getAuthFromDatabase()
   let { version, isLatest } = await fetchLatestBaileysVersion()
   
@@ -178,7 +178,7 @@ app.get("/qr", async (req, res) => {
       .setHeader("Content-Type", "text/plain")
       .send("Provide the session id for authentication")
       .end();
-    if ($.sessionId !== session)
+    if (global.sessionId !== session)
     return void res
       .status(404)
       .setHeader("Content-Type", "text/plain")

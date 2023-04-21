@@ -19,7 +19,7 @@ const chalk = require("chalk");
 
 const cool = new Collection();
 const { RLUsers } = require("./database/RLDataSchema.js");
-const prefix = $.prefix;
+const prefix = global.prefix;
 
 module.exports = async (RLink, m, commands, chatUpdate, store) => {
   try {
@@ -58,10 +58,10 @@ module.exports = async (RLink, m, commands, chatUpdate, store) => {
     const botNumber = await RLink.decodeJid(RLink.user.id);
     const isBotAdmin = isGroup ? groupAdmin.includes(botNumber) : false;
     const isAdmin = isGroup ? groupAdmin.includes(sender) : false;
-    const isCreator = [botNumber, ...$.owner]
+    const isCreator = [botNumber, ...global.owner]
       .map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
       .includes(m.sender);
-    const isOwner = $.owner.includes(m.sender);
+    const isOwner = global.owner.includes(m.sender);
 
     const isCmd = body.startsWith(prefix);
     const quoted = m.quoted ? m.quoted : m;
