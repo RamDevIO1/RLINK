@@ -43,6 +43,7 @@ const PhoneNumber = require('awesome-phonenumber');
 const { Function, Collection, Simple, color } = require("./modules");
 const { serialize, WAConnection } = Simple;
 const { smsg } = Function;
+const modules = require('./modules')
 
 const database = require('./database');
 const Auth     = require('./Auth');
