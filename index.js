@@ -62,7 +62,7 @@ let status;
 
 // %%%%%%%%%%% - [ INIT ] - %%%%%%%%%%% //
 const RLINK = async () => {
-  database.connect(global.monggodb);
+  database.connect(global.mongodb);
   
   const { getAuthFromDatabase } = new Auth(global.sessionId)
   const { saveState, state, clearState } = await getAuthFromDatabase()

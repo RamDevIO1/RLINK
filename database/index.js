@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const modules = require('../modules');
 
-module.exports.connect = async (URL) => {
-  await mongoose.connect(URL, {
+module.exports.connect = async (dataurl) => {
+  await mongoose.connect(dataurl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => {
