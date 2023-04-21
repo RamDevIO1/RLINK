@@ -12,7 +12,7 @@ module.exports = {
       return time = `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
     };
     const uptime = () => formatTime(process.uptime());
-    await RLink.sendMessage(m.from, { caption: `\nHello *${pushName}*, I am *${name}* bot. type *${prefix}help* to get my full command list.\n\n_🧩 Server Uptime:_ *${uptime()}*\n_🎀 Status:_ *Development*\n` }, { quoted: m })
+    await RLink.sendMessage(m.from, { text: `\nHello *${pushName}*, I am *${name}* bot. type *${prefix}help* to get my full command list.\n\n_🧩 Server Uptime:_ *${uptime()}*\n_🎀 Status:_ *Development*\n` }, { quoted: m })
   }
 }
 
