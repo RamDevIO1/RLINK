@@ -1,0 +1,20 @@
+{
+  "name": "RLINK",
+  "version": "RL-1.0",
+  "description": "RLINK BOT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "R.DEV",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "qrcode-terminal": "^0.12.0"
+  }
+}
