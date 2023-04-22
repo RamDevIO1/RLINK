@@ -87,25 +87,13 @@ module.exports = async (RLink, m, commands, chatUpdate, store) => {
         ? m.message.extendedTextMessage.contextInfo.mentionedJid
         : [];
 
-    if (!isCreator) {
-      let checkban =
-        (await RLUsers.findOne({
-          id: m.sender,
-        })) ||
-        (await new RLUsers({
-          id: m.sender,
-          name: m.pushName,
-        }).save());
-
-    }
-
     //----------------------------------------------------------------------------------------------------------------//
 
     
 
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
-      let nocmdtxt = `No such command programmed *${pushname}* senpai! Type *${prefix}help* to get my full command list!\n`;
+      let nocmdtxt = `Tidak ada perintah seperti itu yang diprogram *${pushname}*!, *${prefix}menu* untuk mendapatkan daftar perintah lengkap saya!`;
       const reactmxv = {
         react: {
           text: '❌',
@@ -132,9 +120,9 @@ module.exports = async (RLink, m, commands, chatUpdate, store) => {
     if (!icmd) return;
 
     if (
-      text.endsWith("--info") ||
-      text.endsWith("--i") ||
-      text.endsWith("--?")
+      text.endsWith("-info") ||
+      text.endsWith("-i") ||
+      text.endsWith("-?")
     ) {
       let data = [];
       if (cmd.alias) data.push(`*Alias :* ${cmd.alias.join(", ")}`);
@@ -202,6 +190,7 @@ module.exports = async (RLink, m, commands, chatUpdate, store) => {
         body,
         args,
         ar,
+        sender,
         groupName,
         botNumber,
         flags,
