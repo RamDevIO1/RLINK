@@ -11,7 +11,7 @@ module.exports = {
       if (!global.keyopenai) return m.reply("Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file config.js\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
       if (!text) return m.reply(`Chat dengan AI.\n\nContoh:\n${prefix}rlink Apa itu AI`);
       const configuration = new Configuration({
-        apiKey: "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",
+        apiKey: "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",
       });
       const openai = new OpenAIApi(configuration);
     
