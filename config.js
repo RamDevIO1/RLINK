@@ -21,5 +21,5 @@ global.prefix    = process.env.PREFIX || "!";
 global.packname  = process.env.PACKNAME || `RLINK`;
 global.author    = process.env.AUTHOR || "R.DEV";
 global.port      = process.env.PORT || "8000";
-global.keyopenai = "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"
+global.keyopenai = "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"
 module.exports = { mongodb: global.mongodb };
