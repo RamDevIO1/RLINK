@@ -24,6 +24,7 @@
     "human-readable": "^0.2.1",
     "moment-timezone": "^0.5.43",
     "mongoose": "^7.0.4",
+    "openai": "^3.2.1",
     "pino": "^8.11.0",
     "qrcode": "^1.5.1"
   },
