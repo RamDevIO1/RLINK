@@ -100,7 +100,7 @@ const RLINK = async () => {
     const { connection, lastDisconnect, qr } = update
     status = connection;
     if (connection) {
-      await console.info(`[RLINK] Server Status => ${connection}`);
+      await console.log(modules.color("[@RLINK]", "magenta"), `Server Status => ${connection}`);
     }
   
     if (connection === 'close') {
@@ -170,7 +170,7 @@ const RLINK = async () => {
 
 RLINK();
 
-app.use("/", express.static(join(__dirname, "Page")));
+app.use("/", express.static(join(__dirname, "web")));
 app.get("/qr", async (req, res) => {
     const { session } = req.query;
     if (!session)
@@ -196,7 +196,7 @@ app.get("/qr", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on PORT ${PORT}`);
+    console.log(modules.color("[@WEB]", "blue"), `Webserver running on PORT ${PORT}`);
 });
 
 

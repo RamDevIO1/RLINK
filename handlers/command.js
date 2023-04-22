@@ -14,5 +14,5 @@ module.exports = (RLink) => {
 			load++;
 		}
 	});
-	console.log(RLink.modules.color("[RLINK]", "blue"), `loaded [${load}] commands!`);
+	console.log(RLink.modules.color("[@RLINK]", "magenta"), `loaded [${load}] commands!`);
 };

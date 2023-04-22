@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'rfont';
+  src: url('NotoMono-Regular.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'rfont', monospace;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2A2740;
+}
+
+.panel {
+  width: 360px;
+  height: min-content;
+  padding: 20px;
+  border-radius: 4px;
+  background: #F9F8FF;
+}
+
+.panel h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.panel form {
+  font-size: 15px;
+}
+
+.panel form .form-group {
+  margin-bottom: 12px;
+}
+
+.panel form input[type="submit"] {
+  font-size: 20px;
+  margin-top: 15px;
+}

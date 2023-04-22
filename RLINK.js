@@ -119,18 +119,17 @@ module.exports = async (RLink, m, commands, chatUpdate, store) => {
       });
     }
 
-    if (m.message) {
-      console.log(
-        chalk.black(chalk.bgWhite("[ MESSAGE ]")),
-        chalk.black(chalk.bgGreen(new Date())),
-        chalk.black(chalk.bgBlue(budy || m.mtype)) +
-          "\n" +
-          chalk.magenta("=> From"),
-        chalk.green(pushname),
-        chalk.yellow(m.sender) + "\n" + chalk.blueBright("=> In"),
-        chalk.green(m.isGroup ? m.from : "Private Chat", m.chat)
-      );
+    if(m.message){
+    console.log(
+      chalk.bgWhite("[ MSG ]"),
+      chalk.bgBlue(budy || m.mtype) + "\n" + chalk.cyan("> From"),
+      chalk.green(pushname),
+      chalk.yellow(m.sender) +  "\n" + chalk.blueBright("> In"),
+      chalk.green(m.isGroup ? m.from : "Private Chat", m.chat)
+    )
     }
+    
+    if (!icmd) return;
 
     if (
       text.endsWith("--info") ||
