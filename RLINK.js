@@ -105,7 +105,7 @@ module.exports = async (RLink, m, commands, chatUpdate, store) => {
 
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
-      let mikutext = `No such command programmed *${pushname}* senpai! Type *${prefix}help* to get my full command list!\n`;
+      let nocmdtxt = `No such command programmed *${pushname}* senpai! Type *${prefix}help* to get my full command list!\n`;
       const reactmxv = {
         react: {
           text: '❌',
@@ -114,7 +114,7 @@ module.exports = async (RLink, m, commands, chatUpdate, store) => {
       };
       await RLink.sendMessage(m.from, reactmxv);
 
-      RLink.sendMessage(m.from, { caption: mikutext }, {
+      RLink.sendMessage(m.from, { text: nocmdtxt }, {
         quoted: m,
       });
     }
