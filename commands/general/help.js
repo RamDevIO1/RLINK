@@ -37,15 +37,14 @@ module.exports = {
 				`╭───『 \`\`\`RLINK Commands\`\`\` 』──⊷\n`;
 			const keys = Object.keys(category);
 			for (const key of keys) {
-			  str += `
-┃  ╭───┉┈◈◉◈┈┉───⌯
+			  str += `┃  ╭───┉┈◈◉◈┈┉───⌯
 ┃  │ ⌗ *${key.toUpperCase()}*
 ┃  ╰┬──┉┈◈◉◈┈┉───⌯
 ┃  ┌┤
 ${category[key].map((cmd, idx) =>`┃  │ \`\`\`⿻ ${cmd.name}\`\`\``).join("\n")}
-┃  ╰─────────────⌯
-╰━━━━━━━━━━━━━━──⊷\n`
+┃  ╰─────────────⌯`
 			}
+			str += `╰━━━━━━━━━━━━━━──⊷\n`
 			str += `*${prefix}help* diikuti dengan nama perintah atau *${prefix}<perintah> -info* untuk mendapatkan rincian perintah, e.g. ${prefix}help hello, ${prefix}hello -info`;
 			await RLink.sendMessage(m.from, { text: str });
 		}
